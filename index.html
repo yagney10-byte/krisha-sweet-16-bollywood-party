@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krisha's Sweet 16 - A Night in Bollywood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0f0a1c;
+            color: #f8f5ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 10, 28, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #f8f5ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #231640 0%, #0f0a1c 80%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M30 30L15 0h30L30 30zM0 30l30 15v-30L0 30z'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-subtitle {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 4rem;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .hero-date {
+            font-size: 1.2rem;
+            color: #a29bfe;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: #d4af37;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '◆';
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            color: #ffffff;
+        }
+
+        /* Details & Timeline */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .detail-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .detail-card h3 {
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 80px auto;
+            padding-left: 20px;
+            border-left: 2px solid #d4af37;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4af37;
+            box-shadow: 0 0 10px #d4af37;
+        }
+
+        .timeline-time {
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        /* Dress Code Section */
+        .dress-code-box {
+            background: linear-gradient(145deg, #18102e, #231640);
+            border: 1px solid #d4af37;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        /* RSVP Section - Updated */
+        .rsvp-container {
+            background: linear-gradient(145deg, #18102e, #231640);
+            border: 2px solid #d4af37;
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+            margin-bottom: 40px;
+        }
+
+        .rsvp-container h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .rsvp-container p {
+            color: #a29bfe;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .rsvp-deadline {
+            color: #d4af37 !important;
+            font-weight: 600;
+            margin-bottom: 35px !important;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f0a1c;
+            background: linear-gradient(135deg, #f39c12, #d4af37);
+            text-decoration: none;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .rsvp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(135deg, #d4af37, #f39c12);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #090611;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #706290;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .nav-links {
+                display: none; /* Mobile menu can be expanded if needed */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">KRISHA'S 16TH</a>
+            <ul class="nav-links">
+                <li><a href="#details">Details</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#dress-code">Dress Code</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-subtitle">You Are Cordially Invited To</div>
+        <h1 class="hero-title">A Night in Bollywood</h1>
+        <p class="hero-date">CELEBRATING KRISHA'S 16TH BIRTHDAY</p>
+        <a href="#rsvp" class="rsvp-button">RSVP NOW</a>
+    </section>
+
+    <div class="container">
+
+        <!-- Event Details -->
+        <section id="details">
+            <h2 class="section-title">Event Details</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <h3>When</h3>
+                    <p><strong>Date:</strong> Saturday</p>
+                    <p><strong>Time:</strong> Door Opens at 6:00 PM</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Where</h3>
+                    <p><strong>Venue:</strong> Grand Celebration Hall</p>
+                    <p>123 Celebration Way, Suite 100</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section id="timeline">
+            <h2 class="section-title">Evening Schedule</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">6:00 PM</div>
+                    <p><strong>Red Carpet & Welcome Drinks</strong></p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">7:00 PM</div>
+                    <p><strong>Grand Entrance & Performances</strong></p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">8:00 PM</div>
+                    <p><strong>Dinner</strong></p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">9:00 PM</div>
+                    <p><strong>Cake Cutting & Open Dance Floor</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dress Code Guide -->
+        <section id="dress-code" class="dress-code-box">
+            <h2 class="section-title" style="margin-bottom: 20px;">Dress Code</h2>
+            <p style="font-size: 1.1rem; color: #dcd6f7; margin-bottom: 15px;">
+                <strong>Bollywood Glamour & Formal Attire</strong>
+            </p>
+            <p style="color: #a29bfe;">
+                Dress up as your favorite Bollywood icon, character, or wear formal Indian/Western evening wear!
+            </p>
+        </section>
+
+        <!-- RSVP Section (Replaced with Google Form Link) -->
+        <section id="rsvp" class="rsvp-container">
+            <h2>Confirm Your Attendance</h2>
+            <p>Please take a moment to fill out our quick RSVP form on Google Forms.</p>
+            <p class="rsvp-deadline">Please RSVP by October 11th, 2026</p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcCRZu5FdAUF0ZXSkQ8HFhXg9dTBEGJPAmpHrZHnWHj-7Ycw/viewform?usp=header" target="_blank" class="rsvp-button">
+                Fill Out Google Form
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>We look forward to celebrating with you! ✨</p>
+    </footer>
+
+</body>
+</html>
